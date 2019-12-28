@@ -1,10 +1,15 @@
-﻿html{
+﻿@font-face {
+    font-family: 'Designil Thai Font';
+    unicode-range: U+0E00–U+0E7F;
+}
+html{
 background-size:cover;
 }
 body{
 font-family:Arial, Helvetica, sans-serif;
 margin:0;
 padding:0;
+font-size:15px;
 }
 a{
     text-decoration:none;
@@ -13,7 +18,7 @@ a{
 }
 .a_button{
     background-color:#eeeeee;
-    padding:10px 20px;
+    padding:7px 15px;
     color:#03a9f4!important;
     border-radius:10px;
     margin:0;
@@ -29,6 +34,10 @@ h4{
 *:hover{
 transition:ease-in-out 0.1s;
 }
+div{
+    box-sizing:border-box;
+    overflow:hidden;
+}
 form *:focus{
     outline: none;
 }
@@ -36,33 +45,50 @@ form{
 width:100%;
 margin:auto;
 }
-.menu-bar{
+button{
+    cursor:pointer;
+}
+.is-left{
+    float:left;
+}
+.is-right{
+    float:right;
+}
+#logo{
+    width:30px;
+    height:30px;
+    display:inline-block;
+    background:url("pic/logo.jpg");
+    background-size:cover;
+}
+#space{
+    height:10px;
+    width:20%;
+}
+/*NAVNAR*/
+.navbar{
     width:100%;
     position:fixed;
     z-index:99;
-    background:linear-gradient(90deg ,#03a9f4,#8bc34a);
-    background-color:#03a9f4;
-    padding:10px;
+    background-color:#dddddd;
+    border-bottom:1px solid #bbbbbb;
+    padding:5px 20px;
+    overflow: hidden;
 }
-.level-left{
-    float:left;
-}
-.level-right{
-    float:right;
-    margin-right:50px;
-}
-.level-right a{
-    float:left;
-    color:#efefef;
-    margin-right:30px;
-}
-.level-right a h1{
-    font-size:18px;
-    padding-top:7px;
+.level,.container{
     margin:0;
+    box-sizing:border-box;
 }
-.level-right a h1:hover{
-    color:white;
+.level a{
+    float:left;
+}
+.level a h1{
+    font-size:18px;
+    margin:0;
+    color:#686868;
+}
+.level a h1:hover{
+    color:#282828;
 }
 .search{
     border-radius:15px;
@@ -70,22 +96,22 @@ margin:auto;
     margin:0;
     float:left;
 }
-.search span{
-    display: block;
-    background:url("pic/search.png");
-    width:35px;
-    height:35px;
+.search button{
+    background-color:transparent;
     border:0;
-    margin:4px;
-    padding:0;
-    border-right:1px solid #cccccc;
-    float:left;
+}
+.search span{
+    width:25px;
+    height:20px;
+    display:inline-block;
+    background:url("pic/search.png");
+    background-size:cover;
 }
 .search input{
-    font-size:20px;
+    font-size:18px;
     background-color:transparent;
-    padding:10px;
-    width:400px;
+    padding:5px;
+    width:300px;
     border:0;
 }
 .content{
@@ -95,4 +121,23 @@ margin:auto;
 .title{
     font-weight:bold;
     margin:0;
+}
+
+/*PAGE*/
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 700px) {
+    .navbar{
+        padding:5px;
+    }
+    .level{
+        padding-bottom:5px;
+        width:100%;
+    }
+    .level a{
+        padding:4px 10px;
+    }
+    .search{
+        width:100%;
+    }
 }
