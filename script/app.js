@@ -49,17 +49,14 @@ new Vue({
 				href:"contact.html"
 			}
 		],
-		dropdown:false,
-		ham_icon:"&#x2630;"
+		dropdown:false
 	},
 	methods:{
 		drop: function(){
 			if(this.dropdown){
 				this.dropdown = false;
-				//this.ham_icon:"&#x2630;";
 			}else{
 				this.dropdown = true;
-				//this.ham_icon:"&#xd7;";
 			}
 		}
 	}
