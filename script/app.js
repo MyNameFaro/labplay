@@ -2,7 +2,10 @@
 	template: '<a class="a_button"><slot></slot></a>'
 });
 Vue.component('navbar', {
-	template: '<div class="navbar"><h4><slot></slot></h4></div>'
+	template: '<div class="navbar"><slot></slot></div>'
+});
+Vue.component('dropdown', {
+	template: '<div class="dropdown mobile"><slot></slot></div>'
 });
 Vue.component('a-link', {
 	template: '<a><h1><slot></slot></h1></a>'
@@ -22,6 +25,9 @@ Vue.component('h-title',{
 Vue.component('content', {
 	template: '<div class="content"><slot></slot></div>'
 });
+
+/*MAIN*/
+
 new Vue({ 
 	el: '#app',
 	data:{
@@ -42,6 +48,19 @@ new Vue({
 				name:"Contact",
 				href:"contact.html"
 			}
-		]
+		],
+		dropdown:false,
+		ham_icon:"&#x2630;"
+	},
+	methods:{
+		drop: function(){
+			if(this.dropdown){
+				this.dropdown = false;
+				//this.ham_icon:"&#x2630;";
+			}else{
+				this.dropdown = true;
+				//this.ham_icon:"&#xd7;";
+			}
+		}
 	}
 });
