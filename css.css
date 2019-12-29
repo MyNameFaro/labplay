@@ -61,9 +61,11 @@ button{
     background:url("pic/logo.jpg");
     background-size:cover;
 }
-#space{
-    height:10px;
-    width:20%;
+.desktop{
+    display:block;
+}
+.mobile{
+    display:none;
 }
 /*NAVNAR*/
 .navbar{
@@ -74,6 +76,11 @@ button{
     border-bottom:1px solid #bbbbbb;
     padding:5px 20px;
     overflow: hidden;
+}
+.navbar button{
+    background-color:transparent;
+    border:0;
+    outline:none;
 }
 .level,.container{
     margin:0;
@@ -114,6 +121,20 @@ button{
     width:300px;
     border:0;
 }
+.dropdown{
+    width:100%;
+    border-radius:5px;
+}
+.dropdown a{
+    display:block;
+    width:100%;
+    
+    padding:10px;
+}
+.dropdown h3{
+    color:#686868;
+    margin:0;
+}
 .content{
     padding:50px;
     overflow:hidden;
@@ -127,17 +148,17 @@ button{
 
 /*RESPONSIVE*/
 @media only screen and (max-width: 700px) {
+    .desktop{
+        display:none;
+    }
+    .mobile{
+        display:block;
+    }
     .navbar{
         padding:5px;
     }
-    .level{
-        padding-bottom:5px;
-        width:100%;
-    }
-    .level a{
-        padding:4px 10px;
-    }
     .search{
+        margin-top:10px;
         width:100%;
     }
 }
